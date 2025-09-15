@@ -1,0 +1,201 @@
+/* Import elegant serif font */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    background: linear-gradient(135deg, #f4f1eb 0%, #e8dcc0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#btncontainer {
+    background: linear-gradient(10deg, #ddb892, #7f5539);
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 
+        0 15px 35px rgba(139, 69, 19, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 0px solid #654321;
+    position: relative;
+}
+
+
+/* Decorative border effect */
+#btncontainer::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background: linear-gradient(45deg, #daa520, #cd853f, #daa520, #cd853f);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+#countlabel {
+    font-size: 7rem;
+    font-weight: 600;
+    color: #f5deb3;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(245, 222, 179, 0.3);
+    margin-bottom: 30px;
+    display: block;
+    letter-spacing: 2px;
+}
+
+/* Button base styles */
+button {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 25px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Decrease button */
+#decreasebtn {
+    background: linear-gradient(145deg, #cd853f, #b8860b);
+    color: #2f1b14;
+    box-shadow: 
+        0 6px 15px rgba(205, 133, 63, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    border: 2px solid #8b7355;
+}
+
+#decreasebtn:hover {
+    background: linear-gradient(145deg, #daa520, #cd853f);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 25px rgba(205, 133, 63, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+#decreasebtn:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 10px rgba(205, 133, 63, 0.4),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset button */
+#resetbtn {
+    background: linear-gradient(145deg, #d2691e, #a0522d);
+    color: #fff8dc;
+    box-shadow: 
+        0 6px 15px rgba(210, 105, 30, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    border: 2px solid #8b4513;
+}
+
+#resetbtn:hover {
+    background: linear-gradient(145deg, #ff7f50, #d2691e);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 25px rgba(210, 105, 30, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+#resetbtn:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 10px rgba(210, 105, 30, 0.4),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Increase button */
+#increasebtn {
+    background: linear-gradient(145deg, #cd853f, #b8860b);
+    color: #2f1b14;
+    box-shadow: 
+        0 6px 15px rgba(205, 133, 63, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    border: 2px solid #8b7355;
+}
+
+#increasebtn:hover {
+    background: linear-gradient(145deg, #daa520, #cd853f);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 25px rgba(205, 133, 63, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+#increasebtn:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 10px rgba(205, 133, 63, 0.4),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button ripple effect */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+    transform: translate(-50%, -50%);
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    #btncontainer {
+        padding: 30px 25px;
+    }
+    
+    #countlabel {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        margin: 0 5px;
+    }
+}
+
+/* Accessibility improvements */
+button:focus {
+    outline: 3px solid #f5deb3;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
